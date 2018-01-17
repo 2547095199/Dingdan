@@ -1,6 +1,8 @@
 package com.example.cz.lianxiyuekao.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,8 +63,24 @@ public class TheorderAdapter extends RecyclerView.Adapter<TheorderAdapter.MyView
                 if (list.get(position).getStatus() == 0) {
                     holder.stats.setText("已取消");
                     holder.button.setText("查看订单");
-                    persenter.getData("100", "2", list.get(position).getOrderid() + "", "android");
-                    notifyDataSetChanged();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setTitle("提示");
+                    builder.setMessage("确定要删除吗?");
+                    builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            persenter.getData("100", "2", list.get(position).getOrderid() + "", "android");
+                            notifyDataSetChanged();
+                        }
+                    });
+                    builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
+                    builder.create();
+                    builder.show();
                 } else if (list.get(position).getStatus() == 1) {
                     Toast.makeText(context, "已支付", Toast.LENGTH_SHORT).show();
                 } else if (list.get(position).getStatus() == 2) {
