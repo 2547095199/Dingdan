@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/third_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/third_pay_linear" />
+
+
+    <LinearLayout
+        android:id="@+id/third_pay_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/third_allselect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:drawablePadding="@dimen/padding_5dp"
+            android:text="全选" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/third_totalprice"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_10dp"
+                android:paddingTop="@dimen/padding_10dp"
+                android:text="总价："
+                android:textColor="@color/cblack"
+                android:textSize="@dimen/common_font_size_16" />
+
+            <TextView
+                android:id="@+id/third_totalnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding_10dp"
+                android:paddingLeft="@dimen/padding_10dp"
+                android:text="共0件商品"
+                android:textColor="@color/cblack"
+                android:textSize="@dimen/common_font_size_14" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/third_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_10dp"
+            android:background="@drawable/login_btn"
+            android:paddingBottom="@dimen/padding_10dp"
+            android:paddingLeft="@dimen/margin_30dp"
+            android:paddingRight="@dimen/margin_30dp"
+            android:paddingTop="@dimen/padding_10dp"
+            android:text="去结算"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+</RelativeLayout>
