@@ -86,13 +86,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         if (list.get(position).getIsFirst() == 1) {
-            holder.shangCheckbox.setChecked(list.get(position).isShopSelected());
+            holder.shangCheckbox.setVisibility(View.VISIBLE);
             holder.shangjia.setVisibility(View.VISIBLE);
             holder.shangCheckbox.setChecked(list.get(position).isShopSelected());
             holder.shangjia.setText(map.get(String.valueOf(list.get(position).getSellerid())));
         } else {
             //否则隐藏起来
-            holder.shangCheckbox.setChecked(list.get(position).isShopSelected());
+            holder.shangCheckbox.setVisibility(View.GONE);
             holder.shangjia.setVisibility(View.GONE);
         }
 
